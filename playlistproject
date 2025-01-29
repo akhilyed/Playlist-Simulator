@@ -4,16 +4,23 @@
 * Date: 1/29/25
 * Extra: 
 * https://www.vsixhub.com/vsix/1507/#google_vignette for liveshare
+* https://www.youtube.com/watch?v=CrPHVvgENq0 video for audio
 */
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <Windows.h>
+#include <mmsystem.h>
 using namespace std;
+
+#pragma comment(lib, "winmm.lib")
 
 int main() {
     bool end = false;
-    vector<string> songs = {""};
+    vector<string> songs = {"Dry Hands", "Wet Hands", "Mice On Venus", "Pigstep", "Subwoofer Lullaby", "Haggstrom"};
+    cout << "Welcome to Raymond & Akhil's Playlist Maker! we have chosen several songs for you that we thought you might like." << endl;
     while (!end) {
-
+        cout << "Choose one of the following options for your personalized playlist.\n1. Display All The Songs in the Current Playlist\n2. Add Your Own Song\n3. Choose a Song to Play\n4. Play Songs in Order\n5. Play Shuffled Songs" << endl;
     }
+    return 0;
 }
