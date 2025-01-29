@@ -1,0 +1,18 @@
+/* 
+* Names: Raymond Zhang & Akhil Yeduvaka
+* Program Name: Playlist Project
+* Date: 1/29/25
+* Extra: 
+*/
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int main() {
+    bool end = false;
+    vector<string> songs = {""};
+    while (!end) {
+
+    }
+}
