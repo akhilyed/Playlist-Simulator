@@ -18,6 +18,8 @@ using namespace std;
 int main() {
     bool end = false;
     int choice;
+    int pos;
+    string user_song;
     vector<string> songs = {"Dry Hands", "Wet Hands", "Mice On Venus", "Pigstep", "Subwoofer Lullaby", "Haggstrom"};
     cout << "Welcome to Raymond & Akhil's Playlist Maker! we have chosen several songs for you that we thought you might like." << endl;
     while (!end) {
@@ -29,19 +31,24 @@ int main() {
                 for (string song : songs) {
                     cout << song << " ";
                 }
-                break
+                break;
             case 2:
-                
-                break
+                cout << "Okay, what song would you like to add? (Enter the name of the song here): " << endl;
+                getline(cin, user_song);
+                cout << "Now tell me where you would like to put this song(give me a number that is between 1 and " << songs.size() << "): "  << endl;
+                cin >> pos;
+                pos -= 1;
+                songs.insert(songs.begin() + pos, user_song);
+                break;
             case 3:
-
-                break
+                cout << "What";
+                break;
             case 4:
 
-                break
+                break;
             case 5:
 
-                break
+                break;
             default:
         }
     }
