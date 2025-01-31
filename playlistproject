@@ -17,10 +17,33 @@ using namespace std;
 
 int main() {
     bool end = false;
+    int choice;
     vector<string> songs = {"Dry Hands", "Wet Hands", "Mice On Venus", "Pigstep", "Subwoofer Lullaby", "Haggstrom"};
     cout << "Welcome to Raymond & Akhil's Playlist Maker! we have chosen several songs for you that we thought you might like." << endl;
     while (!end) {
         cout << "Choose one of the following options for your personalized playlist.\n1. Display All The Songs in the Current Playlist\n2. Add Your Own Song\n3. Choose a Song to Play\n4. Play Songs in Order\n5. Play Shuffled Songs" << endl;
+        cin >> choice;
+        switch(choice) {
+            case 1:
+                cout << "Here are the current songs in your playlist: ";
+                for (string song : songs) {
+                    cout << song << " ";
+                }
+                break
+            case 2:
+                
+                break
+            case 3:
+
+                break
+            case 4:
+
+                break
+            case 5:
+
+                break
+            default:
+        }
     }
     return 0;
 }
