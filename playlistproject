@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <string>
 #include <Windows.h>
 #include <mmsystem.h>
 using namespace std;
@@ -17,39 +18,55 @@ using namespace std;
 
 int main() {
     bool end = false;
-    int choice;
+    int choice, choice2;
     int pos;
-    string user_song;
+    string user_song, artist_name;
     vector<string> songs = {"Dry Hands", "Wet Hands", "Mice On Venus", "Pigstep", "Subwoofer Lullaby", "Haggstrom"};
+    vector<string> artists = {"C418", "C418", "C418", "Lena Raine", "C418", "C418"};
     cout << "Welcome to Raymond & Akhil's Playlist Maker! we have chosen several songs for you that we thought you might like." << endl;
     while (!end) {
-        cout << "Choose one of the following options for your personalized playlist.\n1. Display All The Songs in the Current Playlist\n2. Add Your Own Song\n3. Choose a Song to Play\n4. Play Songs in Order\n5. Play Shuffled Songs" << endl;
+        cout << "Choose one of the following options for your personalized playlist.\n1. Play a Song\n2. Add Your Own Song\n3. Play Songs in Order\n4. Play Shuffled Songs\n5. Exit Playlist" << endl;
         cin >> choice;
+        cin.ignore();
         switch(choice) {
             case 1:
-                cout << "Here are the current songs in your playlist: ";
-                for (string song : songs) {
-                    cout << song << " ";
+                cout << "Here are the current songs in your playlist: " << endl;
+                for (int i = 0; i < songs.size(); i++) {
+                    cout << i + 1 << ". " << songs[i] << " by " << artists[i] << endl;
+                }
+                cout << "Which song would you like to play? Enter the number corresponding to the song's spot in the playlist: ";
+                cin >> choice2;
+                if (choice2 < 0 || choice2 > songs.size() - 1) {
+                    cout << "You entered an invalid choice." << endl;
+                }
+                else {
+                    cout << "Now playing " << songs[choice2 - 1] << " by " << artists[choice2 - 1] << "." << endl;
                 }
                 break;
             case 2:
                 cout << "Okay, what song would you like to add? (Enter the name of the song here): " << endl;
                 getline(cin, user_song);
-                cout << "Now tell me where you would like to put this song(give me a number that is between 1 and " << songs.size() << "): "  << endl;
+                cout << "Enter the artist name: ";
+                getline(cin, artist_name);
+                cout << "What spot should it be in? (it should be a number between 1 and " << songs.size() << ")" << endl;
                 cin >> pos;
-                pos -= 1;
-                songs.insert(songs.begin() + pos, user_song);
+                songs.insert(songs.begin() + pos - 1, user_song);
+                artists.insert(artists.begin() + pos - 1, artist_name);
                 break;
             case 3:
-                cout << "What";
+                for (int i = 0; i < songs.size(); i++) {
+                    cout << "Now playing " << songs[i] << " by " << artists[i] << "." << endl;
+                } 
                 break;
             case 4:
-
                 break;
             case 5:
-
+                cout << "Thank you for using our playlist!" << endl;
+                end = true;
                 break;
             default:
+                cout << "You entered an invalid choice. Please try again." << endl;
+                break;
         }
     }
     return 0;
