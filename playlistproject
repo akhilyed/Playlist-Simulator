@@ -21,7 +21,7 @@ void swapper(string& str1, string& str2);
 
 int main() {
     bool end = false;
-    int choice, choice2;
+    int choice, choice2, choice3, choice4;
     int pos;
     string user_song, artist_name;
     vector<string> songs = {"Dry Hands", "Wet Hands", "Mice On Venus", "Pigstep", "Subwoofer Lullaby", "Haggstrom"};
@@ -34,7 +34,7 @@ int main() {
     
     cout << "Welcome to Raymond & Akhil's Playlist Maker! we have chosen several songs for you that we thought you might like." << endl;
     while (!end) {
-        cout << "Choose one of the following options for your personalized playlist.\n1. Play a Song\n2. Add Your Own Song\n3. Play Songs in Order\n4. Play Shuffled Songs\n5. Exit Playlist" << endl;
+        cout << "Choose one of the following options for your personalized playlist.\n1. Play a Song\n2. Add Your Own Song\n3. Play Songs in Order\n4. Play Shuffled Songs\n5. Change Song Order\n6. Exit Playlist" << endl;
         cin >> choice;
         cin.ignore();
         switch(choice) {
@@ -79,6 +79,15 @@ int main() {
                 }
                 break;
             case 5:
+                // Extra:
+                cout << "Which song would you like to move? Enter the number corresponding to the song's spot in the playlist: " << endl;
+                cin >> choice3;
+                cout << "Which song would you like to swap it with? Enter the number corresponding to the song's spot in the playlist: " << endl;
+                cin >> choice4;
+                swapper(songs[choice3 - 1], songs[choice4 - 1]);
+                swapper(artists[choice3 - 1], artists[choice4 - 1]);
+                break;
+            case 6:
                 cout << "Thank you for using our playlist!" << endl;
                 end = true;
                 break;
