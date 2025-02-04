@@ -4,14 +4,12 @@
 * Date: 1/29/25
 * Extra: We gave the user the option to move around songs in the playlist.
 * https://www.vsixhub.com/vsix/1507/#google_vignette for liveshare
-* https://www.youtube.com/watch?v=CrPHVvgENq0 video for audio
 */
 #include <iostream>
 #include <vector>
 #include <cmath>
 #include <string>
-#include <ctime>
-#include <unistd.h>
+#include <ctime>                                       
 #include <Windows.h>
 #include <mmsystem.h>
 using namespace std;
@@ -53,8 +51,27 @@ int main() {
                 }
                 else {
                     cout << "Now playing " << songs[choice2 - 1] << " by " << artists[choice2 - 1] << "." << endl;
-                    usleep(1000000);
-                }
+                    if (songs[choice2 - 1] == "Dry Hands") {
+                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[choice2 - 1] == "Wet Hands") {
+                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[choice2 - 1] == "Mice on Venus") {
+                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[choice2 - 1] == "Pigstep") {
+                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[choice2 - 1] == "Subwoofer Lullaby") {
+                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[choice2 - 1] == "Haggstrom") {
+                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else {
+                        PlaySound(TEXT("skibidi.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
                 break;
             case 2:
                 cout << "Okay, what song would you like to add? (Enter the name of the song here): " << endl;
@@ -74,14 +91,54 @@ int main() {
             case 3:
                 for (int i = 0; i < songs.size(); i++) {
                     cout << "Now playing " << songs[i] << " by " << artists[i] << "." << endl;
-                    usleep(1000000); // Controls the delay between each song
+                    if (songs[i] == "Dry Hands") {
+                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[i] == "Wet Hands") {
+                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[i] == "Mice on Venus") {
+                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[i] == "Pigstep") {
+                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[i] == "Subwoofer Lullaby") {
+                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs[i] == "Haggstrom") {
+                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else {
+                        PlaySound(TEXT("skibidi.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
                 } 
                 break;
             case 4:
                 shufflePlaylist(songs2, artists2);
                 for (int i = 0; i < songs2.size(); i++) {
                     cout << "Now playing " << songs2[i] << " by " << artists2[i] << "." << endl;
-                    usleep(1000000);
+                    if (songs2[i] == "Dry Hands") {
+                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs2[i] == "Wet Hands") {
+                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs2[i] == "Mice on Venus") {
+                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs2[i] == "Pigstep") {
+                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs2[i] == "Subwoofer Lullaby") {
+                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else if (songs2[i] == "Haggstrom") {
+                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
+                    else {
+                        PlaySound(TEXT("skibidi.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                    }
                 }
                 break;
             case 5:
@@ -103,6 +160,7 @@ int main() {
         }
     }
     return 0;
+}
 }
 
 int getIDX(int min, int max) {
