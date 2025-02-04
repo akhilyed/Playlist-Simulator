@@ -11,6 +11,7 @@
 #include <cmath>
 #include <string>
 #include <ctime>
+#include <unistd.h>
 #include <Windows.h>
 #include <mmsystem.h>
 using namespace std;
@@ -52,6 +53,7 @@ int main() {
                 }
                 else {
                     cout << "Now playing " << songs[choice2 - 1] << " by " << artists[choice2 - 1] << "." << endl;
+                    usleep(1000000);
                 }
                 break;
             case 2:
@@ -72,12 +74,14 @@ int main() {
             case 3:
                 for (int i = 0; i < songs.size(); i++) {
                     cout << "Now playing " << songs[i] << " by " << artists[i] << "." << endl;
+                    usleep(1000000); // Controls the delay between each song
                 } 
                 break;
             case 4:
                 shufflePlaylist(songs2, artists2);
                 for (int i = 0; i < songs2.size(); i++) {
                     cout << "Now playing " << songs2[i] << " by " << artists2[i] << "." << endl;
+                    usleep(1000000);
                 }
                 break;
             case 5:
