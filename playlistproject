@@ -2,7 +2,7 @@
 * Names: Raymond Zhang & Akhil Yeduvaka
 * Program Name: Playlist Project
 * Date: 1/29/25
-* Extra: 
+* Extra: We gave the user the option to move around songs in the playlist.
 * https://www.vsixhub.com/vsix/1507/#google_vignette for liveshare
 * https://www.youtube.com/watch?v=CrPHVvgENq0 video for audio
 */
@@ -11,6 +11,8 @@
 #include <cmath>
 #include <string>
 #include <ctime>
+#include <Windows.h>
+#include <mmsystem.h>
 using namespace std;
 
 #pragma comment(lib, "winmm.lib")
