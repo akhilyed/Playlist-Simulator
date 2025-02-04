@@ -10,11 +10,14 @@
 #include <vector>
 #include <cmath>
 #include <string>
-#include <Windows.h>
-#include <mmsystem.h>
+#include <ctime>
 using namespace std;
 
 #pragma comment(lib, "winmm.lib")
+
+int getIDX(int min, int max);
+void shufflePlaylist(vector<string>& playlist, vector<string>& artists); // Declaration of functions
+void swapper(string& str1, string& str2);
 
 int main() {
     bool end = false;
@@ -23,6 +26,12 @@ int main() {
     string user_song, artist_name;
     vector<string> songs = {"Dry Hands", "Wet Hands", "Mice On Venus", "Pigstep", "Subwoofer Lullaby", "Haggstrom"};
     vector<string> artists = {"C418", "C418", "C418", "Lena Raine", "C418", "C418"};
+    
+    // Duplicate vectors to manipulate
+    
+    vector<string> songs2 = {"Dry Hands", "Wet Hands", "Mice On Venus", "Pigstep", "Subwoofer Lullaby", "Haggstrom"};
+    vector<string> artists2 = {"C418", "C418", "C418", "Lena Raine", "C418", "C418"};
+    
     cout << "Welcome to Raymond & Akhil's Playlist Maker! we have chosen several songs for you that we thought you might like." << endl;
     while (!end) {
         cout << "Choose one of the following options for your personalized playlist.\n1. Play a Song\n2. Add Your Own Song\n3. Play Songs in Order\n4. Play Shuffled Songs\n5. Exit Playlist" << endl;
@@ -36,7 +45,7 @@ int main() {
                 }
                 cout << "Which song would you like to play? Enter the number corresponding to the song's spot in the playlist: ";
                 cin >> choice2;
-                if (choice2 < 0 || choice2 > songs.size() - 1) {
+                if (choice2 <= 0 || choice2 > songs.size()) {
                     cout << "You entered an invalid choice." << endl;
                 }
                 else {
@@ -45,13 +54,18 @@ int main() {
                 break;
             case 2:
                 cout << "Okay, what song would you like to add? (Enter the name of the song here): " << endl;
-                getline(cin, user_song);
+                getline(cin, user_song); // Ensures user is able to enter something with spaces.
                 cout << "Enter the artist name: ";
                 getline(cin, artist_name);
-                cout << "What spot should it be in? (it should be a number between 1 and " << songs.size() << ")" << endl;
+                cout << "What spot should it be in? (it should be a number between 1 and " << songs.size() + 1 << ")" << endl;
                 cin >> pos;
-                songs.insert(songs.begin() + pos - 1, user_song);
-                artists.insert(artists.begin() + pos - 1, artist_name);
+                if (pos <= 0 || pos > songs.size() + 1) {
+                    cout << "You entered an invalid choice. Please try again." << endl;
+                }
+                else {
+                    songs.insert(songs.begin() + pos - 1, user_song);
+                    artists.insert(artists.begin() + pos - 1, artist_name);
+                }
                 break;
             case 3:
                 for (int i = 0; i < songs.size(); i++) {
@@ -59,6 +73,10 @@ int main() {
                 } 
                 break;
             case 4:
+                shufflePlaylist(songs2, artists2);
+                for (int i = 0; i < songs2.size(); i++) {
+                    cout << "Now playing " << songs2[i] << " by " << artists2[i] << "." << endl;
+                }
                 break;
             case 5:
                 cout << "Thank you for using our playlist!" << endl;
@@ -70,4 +88,22 @@ int main() {
         }
     }
     return 0;
+}
+
+int getIDX(int min, int max) {
+    return min + rand() % (max - min + 1);
+}
+
+void shufflePlaylist(vector<string>& playlist, vector<string>& artists) { // References arguments to alter them
+    srand(time(0));
+    for (int i = playlist.size() - 1; i > 0; i--) { // Fisher-Yates Shuffle
+        int j = getIDX(0, i);
+        swapper(playlist[i], playlist[j]);
+        swapper(artists[i], artists[j]);
+    }
+}
+void swapper(string& str1, string& str2) { // Swaps the two arguments
+    string temp = str1;
+    str1 = str2;
+    str2 = temp;
 }
