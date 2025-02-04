@@ -70,7 +70,7 @@ int main() {
                         PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
                     }
                     else {
-                        PlaySound(TEXT("skibidi.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_ASYNC);
                     }
                 break;
             case 2:
@@ -110,7 +110,7 @@ int main() {
                         PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
                     }
                     else {
-                        PlaySound(TEXT("skibidi.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_ASYNC);
                     }
                 } 
                 break;
@@ -137,7 +137,7 @@ int main() {
                         PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
                     }
                     else {
-                        PlaySound(TEXT("skibidi.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_ASYNC);
                     }
                 }
                 break;
