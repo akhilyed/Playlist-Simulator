@@ -52,26 +52,27 @@ int main() {
                 else {
                     cout << "Now playing " << songs[choice2 - 1] << " by " << artists[choice2 - 1] << "." << endl;
                     if (songs[choice2 - 1] == "Dry Hands") {
-                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[choice2 - 1] == "Wet Hands") {
-                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[choice2 - 1] == "Mice on Venus") {
-                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[choice2 - 1] == "Pigstep") {
-                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[choice2 - 1] == "Subwoofer Lullaby") {
-                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[choice2 - 1] == "Haggstrom") {
-                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else {
-                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
+                }
                 break;
             case 2:
                 cout << "Okay, what song would you like to add? (Enter the name of the song here): " << endl;
@@ -92,25 +93,25 @@ int main() {
                 for (int i = 0; i < songs.size(); i++) {
                     cout << "Now playing " << songs[i] << " by " << artists[i] << "." << endl;
                     if (songs[i] == "Dry Hands") {
-                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[i] == "Wet Hands") {
-                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[i] == "Mice on Venus") {
-                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[i] == "Pigstep") {
-                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[i] == "Subwoofer Lullaby") {
-                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("subwoofer_lullaby.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[i] == "Haggstrom") {
-                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else {
-                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                 } 
                 break;
@@ -119,25 +120,25 @@ int main() {
                 for (int i = 0; i < songs2.size(); i++) {
                     cout << "Now playing " << songs2[i] << " by " << artists2[i] << "." << endl;
                     if (songs2[i] == "Dry Hands") {
-                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("dry_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs2[i] == "Wet Hands") {
-                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs2[i] == "Mice on Venus") {
-                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs2[i] == "Pigstep") {
-                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs2[i] == "Subwoofer Lullaby") {
-                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs2[i] == "Haggstrom") {
-                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else {
-                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                        PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                 }
                 break;
@@ -160,7 +161,6 @@ int main() {
         }
     }
     return 0;
-}
 }
 
 int getIDX(int min, int max) {
