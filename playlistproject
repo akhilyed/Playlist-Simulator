@@ -57,7 +57,7 @@ int main() {
                     else if (songs[choice2 - 1] == "Wet Hands") {
                         PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
-                    else if (songs[choice2 - 1] == "Mice on Venus") {
+                    else if (songs[choice2 - 1] == "Mice On Venus") {
                         PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[choice2 - 1] == "Pigstep") {
@@ -98,7 +98,7 @@ int main() {
                     else if (songs[i] == "Wet Hands") {
                         PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
-                    else if (songs[i] == "Mice on Venus") {
+                    else if (songs[i] == "Mice On Venus") {
                         PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[i] == "Pigstep") {
@@ -125,7 +125,7 @@ int main() {
                     else if (songs2[i] == "Wet Hands") {
                         PlaySound(TEXT("wet_hands.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
-                    else if (songs2[i] == "Mice on Venus") {
+                    else if (songs2[i] == "Mice On Venus") {
                         PlaySound(TEXT("mice_on_venus.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs2[i] == "Pigstep") {
