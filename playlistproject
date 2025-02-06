@@ -64,7 +64,7 @@ int main() {
                         PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[choice2 - 1] == "Subwoofer Lullaby") {
-                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_SYNC);
+                        PlaySound(TEXT("subwoofer_lullaby.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs[choice2 - 1] == "Haggstrom") {
                         PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_SYNC);
@@ -132,7 +132,7 @@ int main() {
                         PlaySound(TEXT("pigstep.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs2[i] == "Subwoofer Lullaby") {
-                        PlaySound(TEXT("lullaby.wav"), NULL, SND_FILENAME | SND_SYNC);
+                        PlaySound(TEXT("subwoofer_lullaby.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else if (songs2[i] == "Haggstrom") {
                         PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_SYNC);
