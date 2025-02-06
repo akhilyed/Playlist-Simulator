@@ -70,6 +70,7 @@ int main() {
                         PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else {
+                        cout << "This song has not yet been downloaded. Instead, Life Could Be Dream by The Chords will now play." << endl;
                         PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                 }
@@ -111,6 +112,7 @@ int main() {
                         PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else {
+                        cout << "This song has not yet been downloaded. Instead, Life Could Be Dream by The Chords will now play." << endl;
                         PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                 } 
@@ -138,6 +140,7 @@ int main() {
                         PlaySound(TEXT("haggstrom.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                     else {
+                        cout << "This song has not yet been downloaded. Instead, Life Could Be Dream by The Chords will now play." << endl;
                         PlaySound(TEXT("life_could_be_dream.wav"), NULL, SND_FILENAME | SND_SYNC);
                     }
                 }
